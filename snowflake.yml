@@ -1,0 +1,18 @@
+# This is a project definition file, a required component if you intend to use Snowflake CLI in a project directory such as this template.
+
+definition_version: 1
+native_app:
+   name: hello_snowflake
+   source_stage: stage_content.hello_snowflake_stage
+   artifacts:
+      - src: app/*
+        dest: ./
+      - python/hello_python.py
+      - streamlit/hello_snowflake.py
+   package:
+      name: hello_snowflake_package
+      scripts:
+         - scripts/shared_content.sql
+   application:
+      name: hello_snowflake_app
+      debug: false
